@@ -5,7 +5,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
 // Static Sections
-import Hero from './hero';
+import Hero from './Hero';
 import BudgetSection from './BudgetSection';
 import HowItWorks from './HowItWorks';
 import WhyChooseUs from './WhyChooseUs';

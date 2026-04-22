@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom'; // useNavigate add kiya
-import { useTheme } from '../theme/theme';
+import { useTheme } from '../theme/Theme';
 import { useSelector, useDispatch } from 'react-redux'; // useDispatch add kiya
 // Apna path check kar lena
 import { logoutUser } from '../../slice/user/userThunk'; 
