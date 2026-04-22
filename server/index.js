@@ -1,27 +1,39 @@
-    import dotenv from "dotenv"
-    import express from "express"
-    import connectDB from "./db/connectDB.js";
-    dotenv.config()
-    import ideaRouter from "./routes/ideaRoute.js"
-    import userRouter from "./routes/userRoute.js"
-    import cookieParser from "cookie-parser";
-    const app=express();
-    import cors from "cors";
-    connectDB()
-    app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
-    app.use(express.json())
-    app.use(cookieParser());
-    app.use("/api/v1/idea",ideaRouter)
-    app.use("/api/v1/user",userRouter)
-    import { errorMiddleware } from "./middlewares/errorMiddleware.js";
-    app.use(errorMiddleware);
-    // index.js ki aakhri lines ko is se badal de:
+import dotenv from "dotenv";
+import express from "express";
+import connectDB from "./db/connectDB.js";
+import ideaRouter from "./routes/ideaRoute.js";
+import userRouter from "./routes/userRoute.js";
+import cookieParser from "cookie-parser";
+import cors from "cors";
+import { errorMiddleware } from "./middlewares/errorMiddleware.js";
 
-// index.js ki aakhri lines:
+dotenv.config();
+
+const app = express();
+
+// Database connect karo
+connectDB();
+
+// CORS FIX: Yahan humne Localhost aur Live Frontend dono ko allow kar diya hai 👇
+app.use(cors({ 
+    origin: ['http://localhost:5173', 'https://projectt-1-sopo.vercel.app'], 
+    credentials: true 
+}));
+
+app.use(express.json());
+app.use(cookieParser());
+
+// Routes
+app.use("/api/v1/idea", ideaRouter);
+app.use("/api/v1/user", userRouter);
+
+// Error Middleware
+app.use(errorMiddleware);
+
+// Test Route
 app.get('/', (req, res) => {
     res.send("Bhai ka server ab asal mein zinda hai! 🚀");
 });
 
-app.listen(process.env.PORT || 8000, () => {
-    console.log(`🚀 App is running on port ${process.env.PORT || 8000}`);
-});
+// VERCEL FIX: app.listen hata kar sirf export default karna hai 👇
+export default app;
