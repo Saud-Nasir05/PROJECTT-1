@@ -24,9 +24,9 @@ import User from "../models/User.js"
         const token=jwt.sign(tokenData,process.env.JWT_SECRET_KEY,{expiresIn:process.env.JWT_EXPIRE})
         res.status(200).cookie("token",token,{
             expires:new Date(Date.now() + process.env.JWT_EXPIRES * 24 * 60 * 60 * 1000),
-            /*httpOnly:true,
+            httpOnly:true,
             secure:true,
-            sameSite:'None'*/
+            sameSite:'None'
         },
         
     ).json({
@@ -63,9 +63,9 @@ import User from "../models/User.js"
         const token=jwt.sign(tokenData,process.env.JWT_SECRET_KEY,{expiresIn:process.env.JWT_EXPIRE})
         res.status(200).cookie("token",token,{
             expires:new Date(Date.now() + process.env.JWT_EXPIRES * 24 * 60 * 60 * 1000),
-            /*httpOnly:true,
+            httpOnly:true,
             secure:true,
-            sameSite:'None'*/
+            sameSite:'None'
         }).json({
             success:true,
             responseData:{
@@ -79,9 +79,9 @@ import User from "../models/User.js"
 
     res.status(200).cookie("token", "", {
         expires: new Date(Date.now()), 
-        /* httpOnly: true,
+         httpOnly: true,
         secure: true,
-        sameSite: 'None' */
+        sameSite: 'None' 
     }).json({
         success: true,
         message: "Logged out successfully"
