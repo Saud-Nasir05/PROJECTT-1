@@ -1,22 +1,35 @@
 import mongoose from "mongoose";
 
+// Global variable takay connection cache ho jaye
 let cached = global.mongoose;
 
 if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
+    cached = global.mongoose = { conn: null, promise: null };
 }
 
 const connectDB = async () => {
-  if (cached.conn) return cached.conn;
+    if (cached.conn) {
+        return cached.conn; // Agar connection pehle se hai, toh wahi wapis karo
+    }
 
-  if (!cached.promise) {
-    cached.promise = mongoose.connect(process.env.MONGO_URI, {
-      bufferCommands: false
-    });
-  }
+    if (!cached.promise) {
+        const opts = {
+            bufferCommands: false, // Vercel ke liye zaruri
+        };
 
-  cached.conn = await cached.promise;
-  return cached.conn;
+        cached.promise = mongoose.connect(process.env.MONGO_URL, opts).then((mongoose) => {
+            return mongoose;
+        });
+    }
+    
+    try {
+        cached.conn = await cached.promise;
+    } catch (e) {
+        cached.promise = null;
+        throw e;
+    }
+
+    return cached.conn;
 };
 
 export default connectDB;
