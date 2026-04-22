@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { useSelector } from 'react-redux';
 
 
-import { ThemeProvider } from './theme/theme';
+import { ThemeProvider } from './theme/Theme';
 
 
 import Home from './pages/home/Home'; 
-import Brief from './pages/breif/breif'; 
+import Brief from './pages/breif/Breif'; 
 import Dbudget from './pages/detail/Dbudget';
 import Droadmap from './pages/detail/Droadmap';
 import Dgrowth from './pages/detail/Dgrowth';
