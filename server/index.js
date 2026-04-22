@@ -15,9 +15,12 @@ const app = express();
 connectDB();
 
 // CORS FIX: Yahan humne Localhost aur Live Frontend dono ko allow kar diya hai 👇
-app.use(cors({ 
-    origin: ['http://localhost:5173', 'https://projectt-1-sopo.vercel.app'], 
-    credentials: true 
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://projectt-1-75rz.vercel.app"
+  ],
+  credentials: true
 }));
 
 app.use(express.json());
