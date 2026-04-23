@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Budget = ({ idea }) => {
-  const capEx = idea?.capEx || '60'; 
-  const opEx = idea?.opEx || '40';
+  // YAHAN FIX KIYA: Database ke exact keys use kiye hain
+  const capEx = idea?.brief?.capexPercentage || 50; 
+  const opEx = idea?.brief?.opexPercentage || 50;
 
   return (
     <div className="card bg-base-100 shadow-xl border border-base-200 mb-8">

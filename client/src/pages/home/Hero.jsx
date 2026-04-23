@@ -27,11 +27,7 @@ const Hero = () => {
             Stop struggling with guesswork. We provide instant financial models, marketing plans, and market research based exactly on your budget.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <button className="btn btn-primary btn-lg text-white px-8 rounded-xl shadow-lg hover:shadow-primary/40 transition-all">
-              Create Free Account
-            </button>
-          </div>
+
 
           {/* Trust Stats */}
           <div className="flex gap-8 pt-6 border-t border-base-300 w-full justify-center lg:justify-start">

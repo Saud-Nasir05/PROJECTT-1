@@ -12,17 +12,18 @@ const Growth = ({ idea }) => {
         <div className="stats stats-vertical lg:stats-horizontal shadow-inner bg-base-200 w-full">
           <div className="stat">
             <div className="stat-title font-semibold">Est. ROI</div>
-            <div className="stat-value text-success">{idea?.estRoi || '25% - 30%'}</div>
+            {/* Database keys exactly match karti hain */}
+            <div className="stat-value text-success">{idea?.estRoi || 'N/A'}</div>
           </div>
           
           <div className="stat">
             <div className="stat-title font-semibold">Time to Launch</div>
-            <div className="stat-value text-primary">{idea?.timeToLaunch || '8 Months'}</div>
+            <div className="stat-value text-primary">{idea?.timeToLaunch || 'N/A'}</div>
           </div>
           
           <div className="stat">
             <div className="stat-title font-semibold">Risk Level</div>
-            <div className="stat-value text-warning">{idea?.riskLevel || 'Medium'}</div>
+            <div className="stat-value text-warning">{idea?.riskLevel || 'N/A'}</div>
           </div>
         </div>
 

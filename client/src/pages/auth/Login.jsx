@@ -59,7 +59,7 @@ const Login = () => {
                  <label className="label p-0">
                     <span className="label-text font-semibold">Password</span>
                  </label>
-                 <a href="#" className="label-text-alt link link-hover text-primary p-0">Forgot password?</a>
+                 <a href="#" className="label-text-alt link link-hover text-primary p-0"></a>
               </div>
               <input 
                 type="password" 

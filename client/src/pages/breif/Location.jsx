@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Location = ({ idea }) => {
-
-  const targetAreas = idea?.locations || ["Commercial Zone", "High Traffic Area", "Urban City"];
-  const requirements = idea?.requirements || ["Minimum 500 sq ft.", "Commercial Electricity", "Parking Space"];
+  // YAHAN FIX KIYA: Database ke exact paths use kiye hain
+  const targetAreas = idea?.brief?.targetAreas || ["Commercial Zone", "High Traffic Area", "Urban City"];
+  const requirements = idea?.brief?.spaceRequirements || ["Minimum 500 sq ft.", "Commercial Electricity", "Parking Space"];
 
   return (
     <div className="card bg-base-100 shadow-xl border border-base-200 mb-8">
