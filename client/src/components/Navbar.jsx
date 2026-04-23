@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // useNavigate add kiya
+import { Link, useNavigate } from 'react-router-dom';
 import { useTheme } from '../theme/Theme';
-import { useSelector, useDispatch } from 'react-redux'; // useDispatch add kiya
+import { useSelector, useDispatch } from 'react-redux';
 // Apna path check kar lena
 import { logoutUser } from '../../slice/user/userThunk'; 
 
@@ -51,15 +51,17 @@ const Navbar = () => {
         
         {/* Navigation Links - Sirf tab dikhao jab user login ho! */}
         {userInfo && (
-          <div className="hidden md:flex gap-3 font-medium items-center">
-            <Link to="/" className="btn btn-ghost btn-sm">Home</Link>
+          <div className="flex gap-2 font-medium items-center">
+            
+            {/* Home button ko mobile par hide kar diya taake jagah bachay */}
+            <Link to="/" className="hidden sm:flex btn btn-ghost btn-sm">Home</Link>
             
             <Link to="/saved-ideas" className="btn btn-primary btn-sm text-white shadow-md hover:scale-105 transition-transform">
-              💡 Saved Ideas
+              💡 <span className="hidden sm:inline ml-1">Saved</span>
             </Link>
 
             {/* Logout Button wapas aagaya! */}
-            <button onClick={handleLogout} className="btn btn-outline btn-error btn-sm ml-2">
+            <button onClick={handleLogout} className="btn btn-outline btn-error btn-sm">
               Logout
             </button>
           </div>
