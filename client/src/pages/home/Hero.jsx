@@ -27,7 +27,7 @@ const Hero = () => {
             Stop struggling with guesswork. We provide instant financial models, marketing plans, and market research based exactly on your budget.
           </p>
           
-
+//
 
           {/* Trust Stats */}
           <div className="flex gap-8 pt-6 border-t border-base-300 w-full justify-center lg:justify-start">

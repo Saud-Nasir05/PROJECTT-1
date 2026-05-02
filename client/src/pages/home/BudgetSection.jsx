@@ -27,25 +27,28 @@ const BudgetSection = () => {
               Tell us how much capital you are willing to invest, and our AI will generate the top viable business models for you in seconds.
             </p>
             
-            <form onSubmit={handleGenerate} className="max-w-2xl mx-auto w-full">
+<form onSubmit={handleGenerate} className="max-w-2xl mx-auto w-full">
               <div className="flex flex-col md:flex-row gap-4 items-center">
                 <div className="form-control w-full">
-                  <div className="relative">
-                    <span className="absolute left-6 top-4 font-extrabold text-primary text-lg">PKR</span>
-                    <input 
-                      type="number" 
-                      placeholder="e.g. 500000" 
-                      value={budget}
-                      onChange={(e) => setBudget(e.target.value)}
-                      required
-                      className="input input-bordered input-primary w-full pl-20 py-8 text-xl font-bold rounded-2xl shadow-inner focus:outline-offset-4" 
-                    />
+                  <div className="relative flex items-center">
+                    {/* text-primary ki jagah text-accent kar diya */}
+                    <span className="absolute left-6 font-extrabold text-accent text-lg">PKR</span>
+            <input 
+              type="number" 
+              placeholder="e.g. 500000" 
+              value={budget}
+              onChange={(e) => setBudget(e.target.value)}
+              required
+              // text-gray-800 ki jagah text-base-content laga diya hai
+              className="input input-bordered border-gray-300 focus:border-accent focus:ring-1 focus:ring-accent w-full pl-20 py-8 text-xl font-bold rounded-2xl shadow-inner text-base-content focus:outline-none" 
+              />
                   </div>
                 </div>
 
                 <button 
                   type="submit" 
-                  className="btn btn-primary btn-lg text-white shadow-lg hover:scale-105 transition-transform h-16 px-8 rounded-2xl w-full md:w-auto"
+                  // btn-primary hataya, bg-accent aur text-white explicitly define kiya
+                  className="btn bg-accent hover:bg-accent/90 border-none text-white text-lg shadow-lg hover:scale-105 transition-transform h-16 px-8 rounded-2xl w-full md:w-auto"
                 >
                   Generate 🪄
                 </button>

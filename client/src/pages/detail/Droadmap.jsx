@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLocation, Navigate } from 'react-router-dom';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
 const Droadmap = () => {
   const location = useLocation();
@@ -12,6 +14,8 @@ const Droadmap = () => {
   const tasks = roadmapDetail?.detailedTasks || [];
 
   return (
+    <>
+    <Navbar/>
     <div className="min-h-screen bg-base-100 py-12 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto space-y-10">
         
@@ -76,6 +80,8 @@ const Droadmap = () => {
 
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

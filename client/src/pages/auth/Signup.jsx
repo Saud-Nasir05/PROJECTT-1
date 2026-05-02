@@ -40,7 +40,7 @@ const Signup = () => {
           {/* Error Message UI */}
           {error && <div className="alert alert-error text-white text-sm mb-4 rounded-lg p-3">{error}</div>}
 
-          <form onSubmit={handleSignup} className="space-y-5">
+<form onSubmit={handleSignup} className="space-y-5">
             <div className="form-control">
               <label className="label">
                 <span className="label-text font-semibold">Full Name</span>
@@ -50,7 +50,8 @@ const Signup = () => {
                 placeholder="John Doe" 
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="input input-bordered focus:input-accent w-full" 
+                // Yahan border-gray-300 add kiya hai taake border clearly nazar aaye
+                className="input input-bordered border-gray-300 focus:border-accent focus:ring-1 focus:ring-accent w-full" 
                 required 
               />
             </div>
@@ -64,7 +65,7 @@ const Signup = () => {
                 placeholder="you@example.com" 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="input input-bordered focus:input-accent w-full" 
+                className="input input-bordered border-gray-300 focus:border-accent focus:ring-1 focus:ring-accent w-full" 
                 required 
               />
             </div>
@@ -78,7 +79,7 @@ const Signup = () => {
                 placeholder="Create a strong password" 
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="input input-bordered focus:input-accent w-full" 
+                className="input input-bordered border-gray-300 focus:border-accent focus:ring-1 focus:ring-accent w-full" 
                 required 
               />
             </div>
@@ -87,7 +88,8 @@ const Signup = () => {
               <button 
                 type="submit" 
                 disabled={isLoading}
-                className="btn btn-accent w-full text-lg shadow-md text-white"
+                // btn-accent ki jagah bg-accent aur border-none use kiya hai force background ke liye
+                className="btn bg-accent hover:bg-accent/90 border-none w-full text-lg shadow-md text-white"
               >
                 {isLoading ? <span className="loading loading-spinner"></span> : 'Sign Up'}
               </button>

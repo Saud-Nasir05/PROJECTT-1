@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLocation, Navigate } from 'react-router-dom';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
 const Dlocations = () => {
   const location = useLocation();
@@ -13,6 +15,8 @@ const Dlocations = () => {
   const demographics = locDetail?.demographics || [];
 
   return (
+<>
+    <Navbar/>
     <div className="min-h-screen bg-base-100 py-12 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto space-y-10">
         
@@ -103,6 +107,8 @@ const Dlocations = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+</>
   );
 };
 

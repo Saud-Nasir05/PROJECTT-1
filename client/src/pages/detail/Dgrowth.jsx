@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLocation, Navigate } from 'react-router-dom';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
 const Dgrowth = () => {
   const location = useLocation();
@@ -11,6 +13,8 @@ const Dgrowth = () => {
   const strategies = growth?.scalingTimeline || [];
 
   return (
+    <>
+    <Navbar/>
     <div className="min-h-screen bg-base-100 py-12 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto space-y-10">
         
@@ -64,6 +68,8 @@ const Dgrowth = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

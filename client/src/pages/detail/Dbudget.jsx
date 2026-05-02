@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation, Navigate } from 'react-router-dom';
-
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 const Dbudget = () => {
   const location = useLocation();
   const idea = location.state?.selectedIdea;
@@ -12,6 +13,8 @@ const Dbudget = () => {
   const allocations = budget?.allocations || [];
 
   return (
+    <>
+    <Navbar/>
     <div className="min-h-screen bg-base-100 py-12 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto space-y-10">
         
@@ -91,6 +94,8 @@ const Dbudget = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 
