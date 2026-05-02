@@ -2,7 +2,7 @@
 
 > An AI-powered Business Idea & Execution Roadmap Generator.
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-success.svg)](https://projectt-1.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-success.svg)](https://projectt-1-75rz.vercel.app/)
 [![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)](#)
 [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=flat&logo=node.js&logoColor=white)](#)
 [![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=flat&logo=mongodb&logoColor=white)](#)
